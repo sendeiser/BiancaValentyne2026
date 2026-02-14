@@ -65,4 +65,14 @@ function App() {
                     <AnimatePresence mode="wait">
                         <Routes>
                             <Route path="/" element={<Scrapbook memories={memories} />} />
-                 
+                            <Route path="/gallery" element={<Gallery memories={memories} />} />
+                            <Route path="/book" element={<Storybook memories={memories} />} />
+                        </Routes>
+                    </AnimatePresence>
+                </main>
+            </div>
+        </Router>
+    );
+}
+
+export default App;

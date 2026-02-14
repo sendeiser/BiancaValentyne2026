@@ -58,4 +58,57 @@
 }
 
 .visualizer {
-    display: 
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    height: 18px;
+}
+
+.visualizer .bar {
+    width: 3px;
+    background: #d63031;
+    border-radius: 2px;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.song-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2d3436;
+}
+
+.artist {
+    font-size: 0.65rem;
+    color: #636e72;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .version-nav {
+        width: 92%;
+        top: 15px;
+        gap: 5px;
+    }
+
+    .version-nav a {
+        padding: 8px 0;
+        flex: 1;
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    .music-player-react {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 15px;
+    }
+
+    .song-info {
+        display: none;
+    }
+}
