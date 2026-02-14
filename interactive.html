@@ -4,48 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viaje en el Tiempo - Bianca y Tin</title>
+    <title>Nuestra Historia: Libro de Cuentos - Bianca y Tin</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lustria&family=Inter:wght@300;400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="interactive.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
-    <canvas id="particle-canvas"></canvas>
+    <div id="paper-overlay"></div>
 
     <nav class="version-nav">
         <a href="scrapbook.html">Scrapbook</a>
-        <a href="gallery.html">Galería Moderna</a>
-        <a href="interactive.html" class="active">Interactiva</a>
+        <a href="gallery.html">Galería</a>
+        <a href="interactive.html" class="active">Libro</a>
     </nav>
 
-    <header class="neon-header">
-        <h1 class="neon-text">VIAJE EN EL TIEMPO</h1>
-        <div class="counter-container">
-            <p>LLEVAMOS JUNTOS:</p>
-            <div id="time-counter" class="neon-timer">00d 00h 00m 00s</div>
-        </div>
-    </header>
+    <div class="book-container">
+        <div id="book" class="book">
+            <!-- Front Cover -->
+            <div class="page face-front cover" id="cover">
+                <div class="cover-content">
+                    <h1 class="dancing-script">Bianca & Tin</h1>
+                    <p class="lustria">Un cuento sin fin...</p>
+                    <div class="heart-icon">❤️</div>
+                    <p class="instruction">(Haz clic para abrir)</p>
+                </div>
+            </div>
 
-    <main class="slider-container">
-        <div class="slider-track" id="slider-track">
-            <!-- Timeline items injected here -->
-        </div>
-        <div class="slider-controls">
-            <button id="prev-btn" class="ctrl-btn">◀</button>
-            <button id="next-btn" class="ctrl-btn">▶</button>
-        </div>
-    </main>
+            <!-- Pages will be dynamically injected here -->
 
-    <footer class="neon-footer">
+            <!-- Back Cover -->
+            <div class="page face-back cover">
+                <div class="cover-content">
+                    <h2 class="dancing-script">Fin (por ahora)</h2>
+                    <p>Continuará...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="prev-page">Anterior</button>
+        <button id="next-page">Siguiente</button>
+    </div>
+
+    <div class="music-player-ebook">
         <iframe width="0" height="0"
             src="https://www.youtube.com/embed/wkSjA-FkmsY?si=hlGW3KJ4mBqv7-Uf&start=54&autoplay=1" frameborder="0"
             allow="autoplay"></iframe>
-        <button id="fireworks-btn" class="neon-button">LANZAR AMOR 🚀</button>
-        <p class="hitos">Hitos de nuestra historia &copy; 2026</p>
-    </footer>
+        <span class="music-label dancing-script">Your Song 🎵</span>
+    </div>
 
     <script src="images_data.js"></script>
     <script src="interactive.js"></script>
