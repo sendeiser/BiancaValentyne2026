@@ -54,22 +54,40 @@ const MusicPlayer = () => (
     </motion.div>
 );
 
+import Welcome from './components/Welcome';
+
 function App() {
+    const [showWelcome, setShowWelcome] = useState(true);
+
     return (
         <Router>
             <div className="app-container">
-                <Navigation />
-                <MusicPlayer />
+                <AnimatePresence>
+                    {showWelcome && (
+                        <Welcome onEnter={() => setShowWelcome(false)} />
+                    )}
+                </AnimatePresence>
 
-                <main className="content">
-                    <AnimatePresence mode="wait">
-                        <Routes>
-                            <Route path="/" element={<Scrapbook memories={memories} />} />
-                            <Route path="/gallery" element={<Gallery memories={memories} />} />
-                            <Route path="/book" element={<Storybook memories={memories} />} />
-                        </Routes>
-                    </AnimatePresence>
-                </main>
+                {!showWelcome && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <Navigation />
+                        <MusicPlayer />
+
+                        <main className="content">
+                            <AnimatePresence mode="wait">
+                                <Routes>
+                                    <Route path="/" element={<Scrapbook memories={memories} />} />
+                                    <Route path="/gallery" element={<Gallery memories={memories} />} />
+                                    <Route path="/book" element={<Storybook memories={memories} />} />
+                                </Routes>
+                            </AnimatePresence>
+                        </main>
+                    </motion.div>
+                )}
             </div>
         </Router>
     );

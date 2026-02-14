@@ -1,0 +1,92 @@
+.welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, #2d3436 0%, #000000 100%);
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    padding: 50px 20px;
+}
+
+.poem-container {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    color: #fffafa;
+    position: relative;
+    z-index: 10;
+}
+
+.stanza {
+    margin-bottom: 40px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    opacity: 0.9;
+}
+
+.poem-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-style: italic;
+    margin-bottom: 60px;
+    color: #d63031;
+    text-shadow: 0 0 20px rgba(214, 48, 49, 0.3);
+}
+
+.stanza p {
+    margin: 5px 0;
+}
+
+.enter-btn {
+    margin-top: 40px;
+    background: #d63031;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(214, 48, 49, 0.3);
+    transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(214, 48, 49, 0.5);
+}
+
+.floating-hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .poem-title {
+        font-size: 2.2rem;
+    }
+
+    .stanza {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .welcome-screen {
+        align-items: flex-start;
+    }
+}
