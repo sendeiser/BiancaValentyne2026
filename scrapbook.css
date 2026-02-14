@@ -199,11 +199,64 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 10px 20px;
     border-radius: 50px;
     box-shadow: var(--shadow);
     z-index: 1000;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--rose-pastel);
+    display: flex;
+    align-items: center;
+}
+
+.player-inner {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.player-visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 20px;
+}
+
+.player-visualizer .bar {
+    width: 3px;
+    background: var(--soft-red);
+    animation: visualize 1s infinite alternate;
+}
+
+.player-visualizer .bar:nth-child(1) {
+    height: 60%;
+    animation-delay: 0.1s;
+}
+
+.player-visualizer .bar:nth-child(2) {
+    height: 100%;
+    animation-delay: 0.3s;
+}
+
+.player-visualizer .bar:nth-child(3) {
+    height: 40%;
+    animation-delay: 0.5s;
+}
+
+.player-visualizer .bar:nth-child(4) {
+    height: 80%;
+    animation-delay: 0.2s;
+}
+
+@keyframes visualize {
+    from {
+        transform: scaleY(0.5);
+    }
+
+    to {
+        transform: scaleY(1.2);
+    }
 }
 
 /* Petals Animation */

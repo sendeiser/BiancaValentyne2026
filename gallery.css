@@ -203,34 +203,53 @@ body {
     letter-spacing: 0.2rem;
 }
 
-/* Music Button */
-.music-btn {
+/* Music Mini Player */
+.music-player-mini {
     position: fixed;
     bottom: 2rem;
     left: 2rem;
-    background: none;
-    border: none;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    cursor: pointer;
     z-index: 1000;
-}
-
-.play-icon {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--text-black);
-    border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 10px;
 }
 
-.music-label {
-    font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-    text-transform: uppercase;
+.sound-wave {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 20px;
+}
+
+.sound-wave span {
+    width: 2px;
+    height: 100%;
+    background: var(--text-black);
+    animation: wave 1.2s infinite ease-in-out;
+}
+
+.sound-wave span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.sound-wave span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.sound-wave span:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1.5);
+    }
 }
 
 @keyframes reveal {
