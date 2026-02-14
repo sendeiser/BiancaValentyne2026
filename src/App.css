@@ -1,0 +1,61 @@
+.app-container {
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background: #fffafa;
+    color: #2d3436;
+    display: block;
+    /* Ensure it stays at top */
+}
+
+.version-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 6px;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.version-nav a {
+    text-decoration: none;
+    color: #636e72;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+}
+
+.version-nav a.active {
+    background: white;
+    color: #d63031;
+    box-shadow: 0 4px 15px rgba(214, 48, 49, 0.15);
+}
+
+.music-player-react {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 10px 20px;
+    border-radius: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.visualizer {
+    display: 

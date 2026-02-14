@@ -1,0 +1,17 @@
+{
+  "name": "proyecto-san-valentin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.564.0",
+    "react-router-dom": "^7.13.0"
+  }
+}

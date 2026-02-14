@@ -1,0 +1,119 @@
+.scrapbook-view {
+    padding-top: 100px;
+    background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+.scrapbook-hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.handwritten {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 3.5rem;
+    color: #c0392b;
+    margin-bottom: 15px;
+}
+
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0d5c1;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 100%;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.memory-card {
+    width: 45%;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: rotate(var(--rotation, 2deg));
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-item.right {
+    justify-content: flex-end;
+}
+
+.timeline-item.left .memory-card {
+    --rotation: -2deg;
+    margin-left: 5%;
+}
+
+.timeline-item.right .memory-card {
+    --rotation: 2deg;
+    margin-right: 5%;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.washi-tape {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 30px;
+    background: rgba(192, 57, 43, 0.3);
+    backdrop-filter: blur(2px);
+}
+
+.memory-info {
+    padding: 15px 0 5px;
+    text-align: center;
+}
+
+.date {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 1px;
+}
+
+.caption {
+    font-family: 'Homemade Apple', cursive;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+
+    .timeline-item {
+        justify-content: flex-start !important;
+        padding-left: 60px;
+    }
+
+    .memory-card {
+        width: 90% !important;
+        margin: 0 !important;
+    }
+}
