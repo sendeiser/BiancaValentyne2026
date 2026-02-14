@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Lane - Bianca y Tin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <div id="custom-cursor"></div>
+
+    <nav class="version-nav">
+        <a href="scrapbook.html">Scrapbook</a>
+        <a href="gallery.html" class="active">Galería Moderna</a>
+        <a href="interactive.html">Interactiva</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1 class="serif">"Para mi corazón basta tu pecho, para tu libertad bastan mis alas."</h1>
+            <p class="author">— Pablo Neruda</p>
+        </div>
+        <div class="scroll-tag serif">Scroll to discover</div>
+    </section>
+
+    <main class="gallery-container">
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Images will be injected here -->
+        </div>
+    </main>
+
+    <footer class="footer serif">
+        <p>Bianca & Tin</p>
+        <span class="year">2026</span>
+    </footer>
+
+    <button id="music-toggle" class="music-btn">
+        <span class="play-icon">▶</span>
+        <span class="music-label serif">Ambient Music</span>
+    </button>
+
+    <script src="images_data.js"></script>
+    <script src="gallery.js"></script>
+</body>
+
+</html>

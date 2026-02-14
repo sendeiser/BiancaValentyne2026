@@ -1,0 +1,289 @@
+:root {
+    --bg-cream: #fffdf5;
+    --rose-pastel: #f8d1d1;
+    --soft-red: #ce1212;
+    --dark-text: #4a3737;
+    --accent-gold: #d4af37;
+    --washi-tape: rgba(248, 209, 209, 0.6);
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--dark-text);
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+#paper-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('https://www.transparenttextures.com/patterns/notebook.png');
+    opacity: 0.4;
+    z-index: 9999;
+}
+
+.handwritten {
+    font-family: 'Homemade Apple', cursive;
+}
+
+.version-nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(5px);
+}
+
+.version-nav a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.version-nav a.active {
+    color: var(--soft-red);
+}
+
+.version-nav a:hover {
+    color: var(--soft-red);
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #fffdf5 0%, #fcf8e8 100%);
+    position: relative;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: var(--soft-red);
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.5s ease-out;
+}
+
+.hero-content .subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.8;
+    animation: fadeInUp 1.5s ease-out 0.5s both;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+.timeline-container {
+    padding: 100px 20px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom,
+            var(--rose-pastel) 0,
+            var(--rose-pastel) 10px,
+            transparent 10px,
+            transparent 20px);
+    transform: translateX(-50%);
+}
+
+.timeline-event {
+    margin: 100px 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.event-content {
+    width: 45%;
+    background: white;
+    padding: 15px;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: transform 0.5s ease;
+    border: 1px solid #eee;
+}
+
+.timeline-event:nth-child(even) .event-content {
+    margin-left: auto;
+    transform: rotate(2deg);
+}
+
+.timeline-event:nth-child(odd) .event-content {
+    margin-right: auto;
+    transform: rotate(-2deg);
+}
+
+.event-content:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.event-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.washi-tape {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background: var(--washi-tape);
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.event-date {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--soft-red);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.event-caption {
+    font-size: 1rem;
+    color: var(--dark-text);
+}
+
+.footer {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--bg-cream);
+}
+
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+}
+
+/* Petals Animation */
+.petal {
+    position: fixed;
+    top: -10px;
+    pointer-events: none;
+    z-index: 9998;
+    color: var(--rose-pastel);
+    font-size: 20px;
+}
+
+.quote-section {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--soft-red);
+    margin: 60px 0;
+    padding: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .event-content {
+        width: calc(100% - 60px);
+        margin-left: auto !important;
+        margin-right: 0 !important;
+    }
+
+    .timeline-event:nth-child(even) .event-content,
+    .timeline-event:nth-child(odd) .event-content {
+        transform: rotate(0);
+    }
+}
